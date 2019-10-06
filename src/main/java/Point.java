@@ -37,6 +37,41 @@ class Points {
         return new Point(point.x*a, point.y*a,point.z*a);
 
     }
+
+    static double length(Point point){
+
+        return point.length();
+    }
+    static Point opposite(Point point){
+
+        return new Point(-point.x,-point.y, -point.z);
+
+    }
+    static Point inverse(Point point){
+
+        return new Point(1/point.x,1/point.y, 1/point.z);
+
+    }
+
+    static double scalarProduct(Point point1, Point point2){
+
+        double scalar = point1.x*point2.x + point1.y*point2.y + point1.z*point2.z;
+        return scalar;
+
+    }
+    static Point vectorProduct(Point point1, Point point2){
+
+        double q;
+        q = point1.y*point2.z - point1.z*point2.y;
+        double t;
+        double p;
+        t = -(point1.x*point2.z - point1.z*point2.x);
+        p = point1.x*point2.y - point1.y*point2.x;
+
+        Point vector = new Point(q,t,p);
+        return vector;
+
+    }
 }
 
 public class Point {
@@ -50,8 +85,16 @@ public class Point {
         this.z = z;
     }
 
-    void getInfo() {
-        System.out.println("(" + x + "; " + y + "; " + z + ")");
+    public double length () {
+        double r=x*x+y*y+z*z;
+        return Math.sqrt(r);
+    }
+    String getInfo() {
+        return "(" + x + "; " + y + "; " + z + ")";
     }
 
+    @Override
+    public String toString() {
+        return getInfo();
+    }
 }
