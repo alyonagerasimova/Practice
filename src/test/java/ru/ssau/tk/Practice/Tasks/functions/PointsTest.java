@@ -1,8 +1,9 @@
-import com.sun.corba.se.impl.encoding.CDROutputObject;
+package ru.ssau.tk.Practice.Tasks.functions;
+
 import org.testng.annotations.Test;
 import org.testng.Assert;
-
-import static org.testng.Assert.*;
+import ru.ssau.tk.Practice.Tasks.functions.Point;
+import ru.ssau.tk.Practice.Tasks.functions.Points;
 
 public class PointsTest {
 

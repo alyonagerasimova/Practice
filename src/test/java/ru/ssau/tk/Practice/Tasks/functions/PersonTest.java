@@ -1,4 +1,7 @@
+package ru.ssau.tk.Practice.Tasks.functions;
+
 import org.junit.jupiter.api.Test;
+import ru.ssau.tk.Practice.Tasks.functions.Person;
 
 import static org.testng.Assert.*;
 

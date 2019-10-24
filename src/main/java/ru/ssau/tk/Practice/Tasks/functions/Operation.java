@@ -1,3 +1,4 @@
+package ru.ssau.tk.Practice.Tasks.functions;
 
 public abstract class Operation {
     abstract double apply(double number);

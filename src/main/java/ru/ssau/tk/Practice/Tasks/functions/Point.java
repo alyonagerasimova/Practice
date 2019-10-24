@@ -1,3 +1,5 @@
+package ru.ssau.tk.Practice.Tasks.functions;
+
 class Points {
     public static void main(String[] args) {
         Point point1 = new Point(1.5, 2, 3);
