@@ -1,4 +1,4 @@
-package ru.ssau.tk.Practice.Tasks.functions;
+package ru.ssau.tk.gropprjone.practice;
 
 class Points {
     public static void main(String[] args) {

@@ -1,8 +1,7 @@
-package ru.ssau.tk.Practice.Tasks.functions;
+package ru.ssau.tk.gropprjone.practice;
 
 import org.junit.jupiter.api.Test;
 import org.testng.Assert;
-import ru.ssau.tk.Practice.Tasks.functions.Person;
 
 public class PersonTest1 {
 

@@ -1,9 +1,7 @@
-package ru.ssau.tk.Practice.Tasks.functions;
+package ru.ssau.tk.gropprjone.practice;
 
 import org.testng.annotations.Test;
 import org.testng.Assert;
-import ru.ssau.tk.Practice.Tasks.functions.Point;
-import ru.ssau.tk.Practice.Tasks.functions.Points;
 
 public class PointsTest {
 

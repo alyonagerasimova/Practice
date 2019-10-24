@@ -1,4 +1,4 @@
-package ru.ssau.tk.Practice.Tasks.functions;
+package ru.ssau.tk.gropprjone.practice;
 
 public class SqrtOperation extends Operation {
     @Override
