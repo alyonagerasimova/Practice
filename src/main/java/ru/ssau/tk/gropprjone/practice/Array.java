@@ -18,7 +18,7 @@ public class Array {
 
     static int[] oddNum(int count) {
         int[] array = new int[count];
-        for (int i = 0; i < count ; i++) {
+        for (int i = 0; i < count; i++) {
             array[i] = 2 * i + 1;
         }
         return array;
@@ -26,11 +26,12 @@ public class Array {
 
     static int[] evenNum(int count) {
         int[] array = new int[count];
-        for (int i = 0; i < count ; i++) {
+        for (int i = 0; i < count; i++) {
             array[i] = 2 * (count - i);
         }
         return array;
     }
+
     static int[] fibonacci(int count) {
         int[] array = new int[count];
         array[0] = 1;
@@ -44,10 +45,23 @@ public class Array {
     static int[] square(int count) {
 
         int[] array = new int[count];
-        for (int i = 0; i < count ; i++) {
+        for (int i = 0; i < count; i++) {
             array[i] = i * i;
         }
         return array;
+    }
+
+    static double[] solution(double a, double b, double c) {
+        double D = b * b - 4 * a * c;
+        if (D == 0) {
+            return new double[]{-b / (2 * a)};
+        }
+        else if(D > 0) {
+            return new double[]{(-b + Math.sqrt(D)) / (2 * a),(-b - Math.sqrt(D)) / (2 * a) };
+        }
+        else {
+            return new double[0];
+        }
     }
 }
 
