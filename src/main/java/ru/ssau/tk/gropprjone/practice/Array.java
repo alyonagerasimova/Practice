@@ -53,16 +53,59 @@ public class Array {
 
     static double[] solution(double a, double b, double c) {
         double D = b * b - 4 * a * c;
-        if (D == 0) {
-            return new double[]{-b / (2 * a)};
-        }
-        else if(D > 0) {
-            return new double[]{(-b + Math.sqrt(D)) / (2 * a),(-b - Math.sqrt(D)) / (2 * a) };
-        }
-        else {
-            return new double[0];
+        if (a != 0) {
+            if (D == 0) {
+                return new double[]{-b / (2 * a)};
+            } else if (D > 0) {
+                return new double[]{(-b + Math.sqrt(D)) / (2 * a), (-b - Math.sqrt(D)) / (2 * a)};
+            } else {
+                return new double[0];
+            }
+        } else {
+            return new double[]{-c / b};
         }
     }
+
+    static int[] natural(int count) {
+        int[] array = new int[count];
+        int j = 1;
+        for (int i = 0; i < count; i++) {
+            if (j % 3 == 0) {
+                j++;
+            }
+            array[i] = j;
+            j++;
+        }
+        return array;
+    }
+
+    static double[] arithmeticProgression(int count, double first, double dis) {
+        double[] array = new double[count];
+        array[0] = first;
+        for (int i = 1; i < count; i++) {
+            array[i] = array[i - 1] + dis;
+        }
+        return array;
+    }
+
+    static double[] geometricProgression(int count, double first, double den) {
+        double[] array = new double[count];
+        array[0] = first;
+        for (int i = 1; i < count; i++) {
+            array[i] = array[i - 1] * den;
+        }
+        return array;
+    }
+
+    /*static double[] dividers(int dividend) {
+        int count = 0;
+        for (int i = 1; i < Math.sqrt(dividend); i++) {
+            if (dividend % i == 0)
+                count++;
+        }
+    }
+
+     */
 }
 
 
