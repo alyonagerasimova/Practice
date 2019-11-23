@@ -10,11 +10,45 @@ public class Strings {
         return char1;
     }
 
-    public static byte[] stringToBytes(String string){
+    public static byte[] stringToBytes(String string) {
         byte[] masBytes = string.getBytes();
-        for(byte num :masBytes) {
+        for (byte num : masBytes) {
             System.out.println(num + '\n');
         }
         return masBytes;
+    }
+
+    public static void main(String[] args) {
+        String string1 = "Скоро Новый год!";
+        String string2 = new String(string1);
+        System.out.println(string1 == string2);
+        System.out.println(string1.equals(string2));
+    }
+
+    static boolean isPal(String string) {
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) != string.charAt(string.length() - i - 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static boolean equalStrings(String str1, String str2){
+        return  str1 != null && str2 != null && !(str1.equalsIgnoreCase(str2)) && !(str1.equals(str2)) ;
+    }
+
+    static void shielding (){
+        int i = 0;
+        System.out.println("Символ\t№" + ++i);  //символ табуляции
+        System.out.println("Символ\b№" + ++i);  //удаление одного предыдущего символа
+        System.out.println("Символ\n№" + ++i);  //переход на новую строчку
+        System.out.println("Символ\r№" + ++i);  //символ взврата каретки
+        System.out.println("Символ\'№" + ++i);  //символ одинарной кавычки
+        System.out.println("Символ\"№" + ++i);  //символ двойной кавычки
+        System.out.println("Символ\\№" + ++i);  //символ обратной косой черты
+        //Экранировать символ обратной косой черты необходимо для указания,
+        // что последующий символ не будет являтся частью escape-последовательности
+
     }
 }

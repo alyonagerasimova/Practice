@@ -20,4 +20,22 @@ public class StringsTest {
         String string = "java опп";
         byte[] bytes = Strings.stringToBytes(string);
     }
+
+    @Test
+    public void testIsPal() {
+        String string = "eye";
+        assertTrue(Strings.isPal(string));
+    }
+
+    @Test
+    public void testEqualStrings() {
+        String string1 = "thread";
+        String string2 = "Threads";
+        assertTrue(Strings.equalStrings(string1,string2));
+    }
+
+    @Test
+    public void testShielding(){
+        Strings.shielding();
+    }
 }
