@@ -10,7 +10,7 @@ public class Strings {
         return char1;
     }
 
-    public static byte[] stringToBytes(String string) {
+    static byte[] stringToBytes(String string) {
         byte[] masBytes = string.getBytes();
         for (byte num : masBytes) {
             System.out.println(num + '\n');
@@ -34,11 +34,11 @@ public class Strings {
         return true;
     }
 
-    static boolean equalStrings(String str1, String str2){
-        return  str1 != null && str2 != null && !(str1.equalsIgnoreCase(str2)) && !(str1.equals(str2)) ;
+    static boolean equalStrings(String str1, String str2) {
+        return str1 != null && str2 != null && !(str1.equalsIgnoreCase(str2)) && !(str1.equals(str2));
     }
 
-    static void shielding (){
+    static void shielding() {
         int i = 0;
         System.out.println("Символ\t№" + ++i);  //символ табуляции
         System.out.println("Символ\b№" + ++i);  //удаление одного предыдущего символа
@@ -50,5 +50,26 @@ public class Strings {
         //Экранировать символ обратной косой черты необходимо для указания,
         // что последующий символ не будет являтся частью escape-последовательности
 
+    }
+
+    static int indexOfFirstEntry(String str1, String str2) {
+                if (str2.length() < str1.length()) {
+                    return str1.indexOf(str2);
+                }
+        return -1;
+    }
+
+    static int indexOfSecondEntry(String str1, String str2) {
+        if (str2.length() < str1.length()) {
+            return str1.indexOf(str2, str1.length()/2);
+        }
+        return -1;
+    }
+
+    static int indexOfLastEntry(String str1, String str2) {
+        if (str2.length() < str1.length()) {
+            return str1.lastIndexOf(str2, str1.length()/2 - 1);
+        }
+        return -1;
     }
 }

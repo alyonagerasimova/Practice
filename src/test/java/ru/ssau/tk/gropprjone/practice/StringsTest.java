@@ -38,4 +38,25 @@ public class StringsTest {
     public void testShielding(){
         Strings.shielding();
     }
+
+    @Test
+    public void testIndexOfFirstEntry() {
+        String str1 = "abcabc";
+        String str2 = "bc";
+        assertEquals(Strings.indexOfFirstEntry(str1,str2),1);
+    }
+
+    @Test
+    public void testIndexOfSecondEntry(){
+        String str1 = "abcabc";
+        String str2 = "ab";
+        assertEquals(Strings.indexOfSecondEntry(str1,str2),3);
+    }
+
+    @Test
+    public void testIndexOfLastEntry() {
+        String str1 = "abcabc";
+        String str2 = "abc";
+        assertEquals(Strings.indexOfLastEntry(str1,str2),0);
+    }
 }
