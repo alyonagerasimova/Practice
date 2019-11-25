@@ -5,7 +5,7 @@ class Points {
         Point point1 = new Point(1.5, 2, 3);
         Point point2 = new Point(14, 0, -3.8);
         Point point3 = new Point(8, -9, 5);
-        point1.getInfo();
+        point1.toString();
     }
 
     static Point sum(Point point1, Point point2) {
@@ -63,22 +63,20 @@ public class Point {
     final double y;
     final double z;
 
-    public Point(double x, double y, double z) {
+    Point(double x, double y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;
     }
 
-    public double length () {
+    double length() {
         double r=x*x+y*y+z*z;
         return Math.sqrt(r);
     }
-    String getInfo() {
-        return "(" + x + "; " + y + "; " + z + ")";
-    }
+
 
     @Override
     public String toString() {
-        return getInfo();
+        return "[" + x + "," + y + "," + z + "]";
     }
 }

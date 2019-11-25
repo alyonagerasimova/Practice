@@ -59,4 +59,18 @@ public class StringsTest {
         String str2 = "abc";
         assertEquals(Strings.indexOfLastEntry(str1,str2),0);
     }
+
+    @Test
+    public void testCountOfStrings() {
+        String[] strings = {"new day", " tomorrow is monday ", "today is sunday", " week day"};
+        String prefix = "today";
+        String postfix = "day";
+        Strings.countOfStrings(strings, prefix, postfix);
+        assertEquals(Strings.countOfStrings(strings, prefix, postfix), 1);
+    }
+
+    @Test
+    public void testSubString() {
+
+    }
 }

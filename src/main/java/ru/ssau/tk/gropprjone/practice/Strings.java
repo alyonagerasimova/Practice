@@ -72,4 +72,29 @@ public class Strings {
         }
         return -1;
     }
+
+    static int countOfStrings(String[] string, String prefix, String postfix) {
+        int j = 0;
+        for (String s : string) {
+            if (s.startsWith(prefix) && s.endsWith(postfix)) {
+                j++;
+                return j;
+            }
+        }
+        return 0;
+    }
+
+    static String subString(String string, int from, int to){
+        if(from<0){
+            from = 0;
+        }
+        if(to>string.length()){
+            to=string.length();
+        }
+        if(to<=from){
+            return null;
+        }
+        return string.substring(from, to-1);
+    }
+
 }

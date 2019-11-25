@@ -128,4 +128,10 @@ public class PointsTest {
         Assert.assertFalse(equalsApproximately(point3.y, 2.0001));
         Assert.assertFalse(equalsApproximately(point3.z, -1.0001));
     }
+
+    @Test
+    public void testToString(){
+        Point point = new Point(4,6,8);
+
+    }
 }
