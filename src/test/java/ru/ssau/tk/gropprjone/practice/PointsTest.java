@@ -2,6 +2,7 @@ package ru.ssau.tk.gropprjone.practice;
 
 import org.testng.annotations.Test;
 import org.testng.Assert;
+import static org.testng.Assert.*;
 
 public class PointsTest {
 
@@ -132,6 +133,6 @@ public class PointsTest {
     @Test
     public void testToString(){
         Point point = new Point(4,6,8);
-
+        assertEquals(point.toString(),"[4.0,6.0,8.0]");
     }
 }

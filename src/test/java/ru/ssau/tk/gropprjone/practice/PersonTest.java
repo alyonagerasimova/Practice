@@ -1,12 +1,12 @@
 package ru.ssau.tk.gropprjone.practice;
 
 import org.junit.jupiter.api.Test;
-
 import static org.testng.Assert.*;
 
-public class PersonTest {
+class PersonTest {
+
     @Test
-    public void testPerson() {
+    void testPerson() {
 
         Person person1 = new Person();
         person1.setFirstName("Алексей");
@@ -24,4 +24,8 @@ public class PersonTest {
 
     }
 
+    @Test
+    void testTestToString() {
+
+    }
 }

@@ -31,11 +31,11 @@ public class StringsTest {
     public void testEqualStrings() {
         String string1 = "thread";
         String string2 = "Threads";
-        assertTrue(Strings.equalStrings(string1,string2));
+        assertTrue(Strings.equalStrings(string1, string2));
     }
 
     @Test
-    public void testShielding(){
+    public void testShielding() {
         Strings.shielding();
     }
 
@@ -43,34 +43,54 @@ public class StringsTest {
     public void testIndexOfFirstEntry() {
         String str1 = "abcabc";
         String str2 = "bc";
-        assertEquals(Strings.indexOfFirstEntry(str1,str2),1);
+        assertEquals(Strings.indexOfFirstEntry(str1, str2), 1);
     }
 
     @Test
-    public void testIndexOfSecondEntry(){
+    public void testIndexOfSecondEntry() {
         String str1 = "abcabc";
         String str2 = "ab";
-        assertEquals(Strings.indexOfSecondEntry(str1,str2),3);
+        assertEquals(Strings.indexOfSecondEntry(str1, str2), 3);
     }
 
     @Test
     public void testIndexOfLastEntry() {
         String str1 = "abcabc";
         String str2 = "abc";
-        assertEquals(Strings.indexOfLastEntry(str1,str2),0);
+        assertEquals(Strings.indexOfLastEntry(str1, str2), 0);
     }
 
     @Test
     public void testCountOfStrings() {
-        String[] strings = {"new day", " tomorrow is monday ", "today is sunday", " week day"};
-        String prefix = "today";
+        String[] strings = {"new day", " tomorrow is monday ", "today is sunday", "new sunday"};
+        String prefix = "new";
         String postfix = "day";
-        Strings.countOfStrings(strings, prefix, postfix);
-        assertEquals(Strings.countOfStrings(strings, prefix, postfix), 1);
+        assertEquals(Strings.countOfStrings(strings, prefix, postfix), 2);
+    }
+
+    @Test
+    public void testSimilarStrings() {
+        String[] strings = {"new day", " tomorrow is monday ", "today is sunday", "   new sunday"};
+        String prefix = "new";
+        String postfix = "day";
+        assertEquals(Strings.similarStrings(strings, prefix, postfix), 2);
+    }
+
+    @Test
+    public void testPartOfString() {
+        String str1 = "arrarraaaa";
+        String str2 = "arr";
+        String str3 = "rra";
+        assertEquals(Strings.partOfString(str1, str2, str3), "rrrraaaaaa");
     }
 
     @Test
     public void testSubString() {
+        String string = "have a nice day";
+        assertEquals(Strings.subString(string, 2, 1), "");
+        assertEquals(Strings.subString(string, 0, 5), "have ");
+        assertEquals(Strings.subString(string, -1, 4), "have");
 
     }
+
 }

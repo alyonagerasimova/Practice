@@ -9,8 +9,7 @@ public class Person {
     private String lastName;
     private int passportId;
 
-    public Person(){
-
+    Person(){
     }
 
      public Person(String firstName,String lastName) {
@@ -47,8 +46,12 @@ public class Person {
         return lastName;
     }
 
-    public int getPassportId(){
+    int getPassportId(){
         return passportId;
     }
 
+    @Override
+    public String toString(){
+        return firstName + " " + lastName;
+    }
 }

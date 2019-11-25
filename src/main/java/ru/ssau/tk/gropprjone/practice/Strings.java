@@ -53,22 +53,22 @@ public class Strings {
     }
 
     static int indexOfFirstEntry(String str1, String str2) {
-                if (str2.length() < str1.length()) {
-                    return str1.indexOf(str2);
-                }
+        if (str2.length() < str1.length()) {
+            return str1.indexOf(str2);
+        }
         return -1;
     }
 
     static int indexOfSecondEntry(String str1, String str2) {
         if (str2.length() < str1.length()) {
-            return str1.indexOf(str2, str1.length()/2);
+            return str1.indexOf(str2, str1.length() / 2);
         }
         return -1;
     }
 
     static int indexOfLastEntry(String str1, String str2) {
         if (str2.length() < str1.length()) {
-            return str1.lastIndexOf(str2, str1.length()/2 - 1);
+            return str1.lastIndexOf(str2, str1.length() / 2 - 1);
         }
         return -1;
     }
@@ -78,23 +78,42 @@ public class Strings {
         for (String s : string) {
             if (s.startsWith(prefix) && s.endsWith(postfix)) {
                 j++;
-                return j;
             }
         }
-        return 0;
+        return j;
     }
 
-    static String subString(String string, int from, int to){
-        if(from<0){
+    static int similarStrings(String[] string, String prefix, String postfix) {
+        int j = 0;
+        for (String s : string) {
+            if (s.trim().startsWith(prefix) && s.trim().endsWith(postfix)) {
+                j++;
+            }
+        }
+        return j;
+    }
+
+    static String partOfString(String string1, String string2, String string3) {
+        for (int i = 0; i < 100; i++) {
+            if (string1.contains(string2)) {
+                string1 = string1.replaceAll(string2, string3);
+            } else {
+                break;
+            }
+        }
+        return string1;
+    }
+
+    static String subString(String string, int from, int to) {
+        if (from < 0) {
             from = 0;
         }
-        if(to>string.length()){
-            to=string.length();
+        if (to > string.length()) {
+            to = string.length();
+        } else if (to <= from) {
+            return "";
         }
-        if(to<=from){
-            return null;
-        }
-        return string.substring(from, to-1);
+        return string.substring(from, to);
     }
 
 }
