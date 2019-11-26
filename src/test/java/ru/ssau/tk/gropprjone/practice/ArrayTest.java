@@ -96,4 +96,18 @@ public class ArrayTest {
         assertEquals(array[3], 8.8);
         assertEquals(array[4], 17.6);
     }
+
+    @Test
+    public void testArrayContainNumber() {
+        Number[] array = new Number[]{12,3,4,5};
+        assertTrue(Array.arrayContainNumber(array,3));
+        assertTrue(Array.arrayContainNumber(array,12));
+        assertTrue(Array.arrayContainNumber(array,5));
+    }
+
+    @Test
+    public void testArrayIsNull() {
+        Integer[] array = new Integer[]{12, 3, 4, 5, null};
+        assertTrue(Array.arrayIsNull(array));
+    }
 }

@@ -106,6 +106,24 @@ public class Array {
     }
 
      */
+    static boolean arrayContainNumber(Number[] array, Number number) {
+        for (Number value : array) {
+            if (value.equals(number)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    static boolean arrayIsNull(Integer[] array) {
+        for (Integer i : array) {
+            if (i == null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
 
 
