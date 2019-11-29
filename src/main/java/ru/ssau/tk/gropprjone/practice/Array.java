@@ -1,5 +1,7 @@
 package ru.ssau.tk.gropprjone.practice;
 
+import java.beans.IntrospectionException;
+
 public class Array {
 
     static int[] workThisArray(int count) {
@@ -106,6 +108,18 @@ public class Array {
     }
 
      */
+    static void invertArray(Number[] array){
+        for(Number arr : array){
+            if(array instanceof Double[]) {
+                arr = -(Double) arr;
+            }
+            if(array instanceof Integer[]) {
+                arr = -(Integer) arr;
+            }
+        }
+
+    }
+
     static boolean arrayContainNumber(Number[] array, Number number) {
         for (Number value : array) {
             if (value.equals(number)) {
