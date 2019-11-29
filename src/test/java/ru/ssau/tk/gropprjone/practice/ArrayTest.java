@@ -98,6 +98,22 @@ public class ArrayTest {
     }
 
     @Test
+    public void testInvertArray(){
+        Double[] arrayDouble = {1.2, 4.3,32.1,34.5,7.8};
+        Double[] arrayDouble1 = {-1.2, -4.3,-32.1,-34.5,-7.8};
+        Integer[] arrayInt = {1, 2, 3, 4, 5};
+        Integer[] arrayInt1 = {-1, -2, -3, -4, -5};
+        Array.invertArray(arrayDouble);
+        Array.invertArray(arrayInt);
+        for (int i = 0; i < arrayInt.length; i++) {
+            assertEquals(arrayInt[i], arrayInt1[i], ACCURACY);
+        }
+        for (int i = 0; i < arrayDouble.length; i++) {
+            assertEquals(arrayDouble[i], arrayDouble1[i], ACCURACY);
+        }
+    }
+
+    @Test
     public void testArrayContainNumber() {
         Number[] array = new Number[]{12,3,4,5};
         assertTrue(Array.arrayContainNumber(array,3));
@@ -109,5 +125,23 @@ public class ArrayTest {
     public void testArrayIsNull() {
         Integer[] array = new Integer[]{12, 3, 4, 5, null};
         assertTrue(Array.arrayIsNull(array));
+    }
+
+    @Test
+    public void testCountOfEvenNumber() {
+        double[] array = {2,4,6,8,9,12};
+        assertEquals(Array.countOfEvenNumber(array),5);
+    }
+
+    @Test
+    public void testCountOfInteger() {
+        int[] array = {2,4,6,8,9,12};
+        assertEquals(Array.countOfInteger(array),12);
+    }
+
+    @Test
+    public void testSumOfEvenIndex() {
+        double[] array = {2.1,4.9,6.1,8.8,9.4,12.6};
+        assertEquals(Array.sumOfEvenIndex(array),15.5);
     }
 }

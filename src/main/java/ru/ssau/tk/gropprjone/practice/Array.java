@@ -1,6 +1,5 @@
 package ru.ssau.tk.gropprjone.practice;
 
-import java.beans.IntrospectionException;
 
 public class Array {
 
@@ -108,12 +107,12 @@ public class Array {
     }
 
      */
-    static void invertArray(Number[] array){
-        for(Number arr : array){
-            if(array instanceof Double[]) {
+    static void invertArray(Number[] array) {
+        for (Number arr : array) {
+            if (array instanceof Double[]) {
                 arr = -(Double) arr;
             }
-            if(array instanceof Integer[]) {
+            if (array instanceof Integer[]) {
                 arr = -(Integer) arr;
             }
         }
@@ -138,6 +137,38 @@ public class Array {
         return false;
     }
 
+    static int countOfEvenNumber(double[] array) {
+        int k = 0;
+        for (double v : array) {
+            if (v % 2 == 0) {
+                k++;
+            }
+        }
+        return k;
+    }
+
+    static int countOfInteger(int[] array) {
+
+        if (array.length == 0) {
+            return Integer.parseInt(null);
+        }
+        int j = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (j < array[i])
+                j = array[i];
+        }
+        return j;
+    }
+
+    static double sumOfEvenIndex(double[] array) {
+        double sum = 0;
+        for (int i = 1; i < array.length; i++) {
+            if (i % 2 == 0) {
+                sum = sum + array[i];
+            }
+        }
+        return sum;
+    }
 }
 
 
