@@ -1,6 +1,6 @@
 package ru.ssau.tk.gropprjone.practice;
 
-public class NamedPoint extends Point {
+public class NamedPoint extends Point implements Resettable {
     private String name;
     public NamedPoint(){
         this(0,0,0,"Origin");
@@ -20,5 +20,10 @@ public class NamedPoint extends Point {
 
     String getName() {
         return name;
+    }
+
+    @Override
+    public void reset() {
+        name = "Absent";
     }
 }

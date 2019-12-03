@@ -8,6 +8,7 @@ public class Person {
     private String firstName;
     private String lastName;
     private int passportId;
+    private Gender gender;
 
     Person(){
     }
@@ -21,37 +22,41 @@ public class Person {
          this.passportId = passportId;
      }
 
-    public Person(String firstName, String lastName, int passportId){
+    Person(String firstName, String lastName, int passportId){
         this.firstName = firstName;
         this.lastName = lastName;
         this.passportId = passportId;
     }
 
-    public void setPassportId(int passportId) {
+    void setPassportId(int passportId) {
         this.passportId = passportId;
     }
-
-    public void setFirstName(String firstName) {
+    void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
-    public void setLastName(String lastName) {
+    void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
-    public String getFirstName() {
+    public void setGender(Gender male) {
+        this.gender = male;
+    }
+    String getFirstName() {
         return firstName;
     }
-    public String getLastName(){
+    String getLastName(){
         return lastName;
     }
-
     int getPassportId(){
         return passportId;
+    }
+    Gender getGender(){
+        return gender;
     }
 
     @Override
     public String toString(){
         return firstName + " " + lastName;
     }
+
+
 }
