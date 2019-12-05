@@ -63,10 +63,10 @@ public class ArrayTest {
     public void testSolution() {
         double[] x = Array.solution(1, 2, 1);
         assertEquals(x[0], -1, ACCURACY);
-        double[] x1 = Array.solution(1,6,5);
-        assertEquals(x1[0],-1, ACCURACY );
-        assertEquals(x1[1],-5, ACCURACY );
-        double[] x2 = Array.solution(0,6,12);
+        double[] x1 = Array.solution(1, 6, 5);
+        assertEquals(x1[0], -1, ACCURACY);
+        assertEquals(x1[1], -5, ACCURACY);
+        double[] x2 = Array.solution(0, 6, 12);
         assertEquals(x2[0], -2., ACCURACY);
     }
 
@@ -97,7 +97,7 @@ public class ArrayTest {
         assertEquals(array[4], 17.6);
     }
 
-    @Test
+    /*@Test
     public void testInvertArray(){
         Double[] arrayDouble = {1.2, 4.3,32.1,34.5,7.8};
         Double[] arrayDouble1 = {-1.2, -4.3,-32.1,-34.5,-7.8};
@@ -111,14 +111,14 @@ public class ArrayTest {
         for (int i = 0; i < arrayDouble.length; i++) {
             assertEquals(arrayDouble[i], arrayDouble1[i], ACCURACY);
         }
-    }
+    }*/
 
     @Test
     public void testArrayContainNumber() {
-        Number[] array = new Number[]{12,3,4,5};
-        assertTrue(Array.arrayContainNumber(array,3));
-        assertTrue(Array.arrayContainNumber(array,12));
-        assertTrue(Array.arrayContainNumber(array,5));
+        Number[] array = new Number[]{12, 3, 4, 5};
+        assertTrue(Array.arrayContainNumber(array, 3));
+        assertTrue(Array.arrayContainNumber(array, 12));
+        assertTrue(Array.arrayContainNumber(array, 5));
     }
 
     @Test
@@ -129,19 +129,25 @@ public class ArrayTest {
 
     @Test
     public void testCountOfEvenNumber() {
-        double[] array = {2,4,6,8,9,12};
-        assertEquals(Array.countOfEvenNumber(array),5);
+        double[] array = {2, 4, 6, 8, 9, 12};
+        assertEquals(Array.countOfEvenNumber(array), 5);
     }
 
     @Test
     public void testCountOfInteger() {
-        int[] array = {2,4,6,8,9,12};
-        assertEquals(Array.countOfInteger(array),12);
+        int[] array = {2, 4, 6, 8, 9, 12};
+        assertEquals(Array.countOfInteger(array), 12);
     }
 
     @Test
     public void testSumOfEvenIndex() {
-        double[] array = {2.1,4.9,6.1,8.8,9.4,12.6};
-        assertEquals(Array.sumOfEvenIndex(array),15.5);
+        double[] array = {2.1, 4.9, 6.1, 8.8, 9.4, 12.6};
+        assertEquals(Array.sumOfEvenIndex(array), 15.5);
+    }
+
+    @Test
+    public void testDivisionOfElements() {
+        assertTrue(Array.divisionOfElements(new int[]{4, 8, 16, 12, 8}));
+        assertFalse(Array.divisionOfElements(new int[]{4, 8, 16, 12, 2}));
     }
 }

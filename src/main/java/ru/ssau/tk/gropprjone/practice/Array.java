@@ -1,7 +1,7 @@
 package ru.ssau.tk.gropprjone.practice;
 
 
-public class Array {
+class Array {
 
     static int[] workThisArray(int count) {
         return new int[count];
@@ -168,6 +168,19 @@ public class Array {
             }
         }
         return sum;
+    }
+
+    static boolean divisionOfElements(int[] array) {
+        int count = 0;
+        for (int value : array) {
+            if (value % array[0] == 0) {
+                count++;
+            }
+            if (value % array[array.length - 1] == 0) {
+                count--;
+            }
+        }
+        return (count > 0);
     }
 }
 
