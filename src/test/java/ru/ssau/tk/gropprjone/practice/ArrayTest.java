@@ -150,4 +150,11 @@ public class ArrayTest {
         assertTrue(Array.divisionOfElements(new int[]{4, 8, 16, 12, 8}));
         assertFalse(Array.divisionOfElements(new int[]{4, 8, 16, 12, 2}));
     }
+
+    @Test
+    public void testIndexOfElement() {
+        double[] array = {2.1, 4.9, 6.1, 8.8, 9.4, 12.6};
+        double k = 6.1;
+        assertEquals(Array.indexOfElement(array,k),2);
+    }
 }

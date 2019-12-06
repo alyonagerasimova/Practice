@@ -182,6 +182,15 @@ class Array {
         }
         return (count > 0);
     }
+
+    static int indexOfElement(double[] array, double k){
+        for(int i = 0; i < array.length; i++){
+            if(array[i] == k){
+                return i;
+            }
+        }
+        return 0;
+    }
 }
 
 
