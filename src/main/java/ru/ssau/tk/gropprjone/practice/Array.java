@@ -183,13 +183,30 @@ class Array {
         return (count > 0);
     }
 
-    static int indexOfElement(double[] array, double k){
-        for(int i = 0; i < array.length; i++){
-            if(array[i] == k){
+    static int indexOfElement(double[] array, double k) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == k) {
                 return i;
             }
         }
         return 0;
+    }
+
+
+    static void stringArray(String[] strings) {
+        for (String str : strings) {
+            System.out.println(str);
+        }
+    }
+
+    static double multiplication(double[] array) {
+        double tmp = 1;
+        for (double i : array) {
+            if (i != 0 && i != Double.POSITIVE_INFINITY && !Double.isNaN(i)) {
+                tmp *= i;
+            }
+        }
+        return tmp;
     }
 }
 

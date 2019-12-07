@@ -157,4 +157,17 @@ public class ArrayTest {
         double k = 6.1;
         assertEquals(Array.indexOfElement(array,k),2);
     }
+
+
+    @Test
+    public void testStringArray() {
+        String[] str = {"aaa","bbb","ccc"};
+        Array.stringArray(str);
+    }
+
+    @Test
+    public void testMultiplication() {
+        double[] array = {2.1, 4.9, 6.1, 8.8, 9.4, 12.6};
+        assertEquals(Array.multiplication(array),65422.371168, ACCURACY);
+    }
 }
