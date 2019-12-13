@@ -155,32 +155,32 @@ public class ArrayTest {
     public void testIndexOfElement() {
         double[] array = {2.1, 4.9, 6.1, 8.8, 9.4, 12.6};
         double k = 6.1;
-        assertEquals(Array.indexOfElement(array,k),2);
+        assertEquals(Array.indexOfElement(array, k), 2);
     }
 
 
     @Test
     public void testStringArray() {
-        String[] str = {"aaa","bbb","ccc"};
+        String[] str = {"aaa", "bbb", "ccc"};
         Array.stringArray(str);
     }
 
     @Test
     public void testMultiplication() {
         double[] array = {2.1, 4.9, 6.1, 8.8, 9.4, 12.6};
-        assertEquals(Array.multiplication(array),65422.371168, ACCURACY);
+        assertEquals(Array.multiplication(array), 65422.371168, ACCURACY);
     }
 
     @Test
     public void testByteNot() {
         int[] array = {2, 4, 6, 8, 9, 12};
         Array.bitNot(array);
-        assertEquals(array[0],-3);
-        assertEquals(array[1],-5);
-        assertEquals(array[2],-7);
-        assertEquals(array[3],-9);
-        assertEquals(array[4],-10);
-        assertEquals(array[5],-13);
+        assertEquals(array[0], -3);
+        assertEquals(array[1], -5);
+        assertEquals(array[2], -7);
+        assertEquals(array[3], -9);
+        assertEquals(array[4], -10);
+        assertEquals(array[5], -13);
     }
 
     @Test
@@ -188,12 +188,22 @@ public class ArrayTest {
         int[] array = {2, 4, 6, 8, 9, 12};
         int[] array1 = Array.bitNotTwo(array);
         assertEquals(array1[0], -3);
-        assertEquals(array1[1],-5);
-        assertEquals(array1[2],-7);
-        assertEquals(array1[3],-9);
-        assertEquals(array1[4],-10);
-        assertEquals(array1[5],-13);
+        assertEquals(array1[1], -5);
+        assertEquals(array1[2], -7);
+        assertEquals(array1[3], -9);
+        assertEquals(array1[4], -10);
+        assertEquals(array1[5], -13);
         assertEquals(Array.bitNotTwo(array1)[0], 2);
         assertEquals(Array.bitNotTwo(array1)[1], 4);
+    }
+
+    @Test
+    public void testSumPairsOfArray() {
+        int[] array = {2, 4, 6, 8, 9, 12};
+        assertEquals(Array.sumPairsOfArray(array), new int[]{6, 14, 21});
+        int[] array1 = {2, 4, 6, 8, 9, 12, 33};
+        assertEquals(Array.sumPairsOfArray(array1), new int[]{6, 14, 21, 33});
+        int[] array2 = {0, 2, 4, 6, 8, 9, 12, 15};
+        assertEquals(Array.sumPairsOfArray(array2), new int[]{2, 10, 17, 27});
     }
 }

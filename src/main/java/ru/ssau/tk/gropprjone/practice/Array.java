@@ -222,6 +222,24 @@ class Array {
         }
         return array1;
     }
+
+    static int[] sumPairsOfArray(int[] array) {
+        int[] arrayNew;
+        if(array.length % 2 == 0) {
+           arrayNew = new int[array.length / 2];
+            for (int i = 0; i < arrayNew.length; i++) {
+                arrayNew[i] = array[2 * i] + array[2 * i + 1];
+            }
+        }
+        else {
+            arrayNew = new int[array.length / 2 + 1];
+            for (int i = 0; i < arrayNew.length - 1; i++) {
+                arrayNew[i] = array[2 * i] + array[2 * i + 1];
+            }
+            arrayNew[arrayNew.length - 1] = array[array.length - 1];
+        }
+        return arrayNew;
+    }
 }
 
 
