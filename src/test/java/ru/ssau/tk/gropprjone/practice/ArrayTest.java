@@ -170,4 +170,30 @@ public class ArrayTest {
         double[] array = {2.1, 4.9, 6.1, 8.8, 9.4, 12.6};
         assertEquals(Array.multiplication(array),65422.371168, ACCURACY);
     }
+
+    @Test
+    public void testByteNot() {
+        int[] array = {2, 4, 6, 8, 9, 12};
+        Array.bitNot(array);
+        assertEquals(array[0],-3);
+        assertEquals(array[1],-5);
+        assertEquals(array[2],-7);
+        assertEquals(array[3],-9);
+        assertEquals(array[4],-10);
+        assertEquals(array[5],-13);
+    }
+
+    @Test
+    public void testByteNotTwo() {
+        int[] array = {2, 4, 6, 8, 9, 12};
+        int[] array1 = Array.bitNotTwo(array);
+        assertEquals(array1[0], -3);
+        assertEquals(array1[1],-5);
+        assertEquals(array1[2],-7);
+        assertEquals(array1[3],-9);
+        assertEquals(array1[4],-10);
+        assertEquals(array1[5],-13);
+        assertEquals(Array.bitNotTwo(array1)[0], 2);
+        assertEquals(Array.bitNotTwo(array1)[1], 4);
+    }
 }

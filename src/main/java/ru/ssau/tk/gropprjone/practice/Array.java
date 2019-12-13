@@ -208,6 +208,20 @@ class Array {
         }
         return tmp;
     }
+
+    static void bitNot(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = ~array[i];
+        }
+    }
+
+    static int[] bitNotTwo(int[] array) {
+        int[] array1 = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            array1[i] = ~array[i];
+        }
+        return array1;
+    }
 }
 
 
