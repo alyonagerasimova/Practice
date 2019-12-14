@@ -240,6 +240,30 @@ class Array {
         }
         return arrayNew;
     }
+
+    public static boolean[] arrayOfBoolean(int[] array) {
+        boolean[] array1;
+        array1 = new boolean[array.length];
+        for (int i = 0; i < array1.length; i++) {
+            if (array[i] % 2 == 0) {
+                array1[i] = true;
+            } else {
+                array1[i] = false;
+            }
+        }
+        return array1;
+    }
+
+    static int[] longToInt(long i){
+        int a = (int) (i >> 32);
+        int b = (int) i;
+        return new int[]{a, b};
+    }
+
+    public static long intToLong(int[] array) {
+        return ((long) array[0] << 32) | ((long) array[1] & 4294967295L);
+    }
+
 }
 
 

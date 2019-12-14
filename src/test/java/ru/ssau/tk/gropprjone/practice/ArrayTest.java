@@ -206,4 +206,19 @@ public class ArrayTest {
         int[] array2 = {0, 2, 4, 6, 8, 9, 12, 15};
         assertEquals(Array.sumPairsOfArray(array2), new int[]{2, 10, 17, 27});
     }
+
+    @Test
+    public void testArrayOfBoolean() {
+        int[] array = {2, 4, 6, 8, 9, 12};
+        assertEquals(Array.arrayOfBoolean(array), new boolean[]{true,true,true,true,false,true});
+    }
+
+    @Test
+    public void testLongToInt() {
+        long k = 77875444343569890L;
+        int[] array = new int[]{18131789,-724369950};
+        assertEquals(Array.longToInt(k),array);
+        assertEquals(Array.intToLong(array),77875444343569890L);
+    }
+
 }
