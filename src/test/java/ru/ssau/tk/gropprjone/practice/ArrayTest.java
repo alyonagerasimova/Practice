@@ -221,4 +221,16 @@ public class ArrayTest {
         assertEquals(Array.intToLong(array),77875444343569890L);
     }
 
+    @Test
+    public void testNaturalWithIndex() {
+        assertEquals(Array.naturalWithIndex(5,2),new int[]{4,5,1,2,3});
+        assertEquals(Array.naturalWithIndex(7,4),new int[]{4,5,6,7,1,2,3});
+    }
+
+    @Test
+    public void testTwoDimensionalArray(){
+        assertEquals(Array.twoDimensionalArray(3)[0][0],1);
+        assertEquals(Array.twoDimensionalArray(3)[0][2],3);
+        assertEquals(Array.twoDimensionalArray(3)[1][1],5);
+    }
 }

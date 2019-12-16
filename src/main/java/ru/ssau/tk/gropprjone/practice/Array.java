@@ -225,13 +225,12 @@ class Array {
 
     static int[] sumPairsOfArray(int[] array) {
         int[] arrayNew;
-        if(array.length % 2 == 0) {
-           arrayNew = new int[array.length / 2];
+        if (array.length % 2 == 0) {
+            arrayNew = new int[array.length / 2];
             for (int i = 0; i < arrayNew.length; i++) {
                 arrayNew[i] = array[2 * i] + array[2 * i + 1];
             }
-        }
-        else {
+        } else {
             arrayNew = new int[array.length / 2 + 1];
             for (int i = 0; i < arrayNew.length - 1; i++) {
                 arrayNew[i] = array[2 * i] + array[2 * i + 1];
@@ -254,16 +253,40 @@ class Array {
         return array1;
     }
 
-    static int[] longToInt(long i){
+    static int[] longToInt(long i) {
         int a = (int) (i >> 32);
         int b = (int) i;
         return new int[]{a, b};
     }
 
-    public static long intToLong(int[] array) {
+    static long intToLong(int[] array) {
         return ((long) array[0] << 32) | ((long) array[1] & 4294967295L);
     }
 
+    static int[] naturalWithIndex(int size, int index) {
+        int[] array = new int[size];
+        for (int i = 0; i < array.length; i++) {
+            if ((i + index) < size) {
+                array[i + index] = i + 1;
+            } else {
+                array[i + index - size] = i + 1;
+            }
+        }
+        return array;
+    }
+
+    static int[][] twoDimensionalArray(int count) {
+        int[][] arrays = new int[count][];
+        int n = 1;
+        for (int i = 0; i < count; i++) {
+            arrays[i] = new int[count - i];
+            for (int j = 0; j < (count - i); j++){
+                arrays[i][j] = n;
+                n++;
+            }
+        }
+        return arrays;
+    }
 }
 
 
