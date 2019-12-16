@@ -3,6 +3,9 @@ package ru.ssau.tk.gropprjone.practice;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Collection;
+import java.util.LinkedList;
+
 import static org.testng.Assert.*;
 
 public class ArrayTest {
@@ -210,27 +213,50 @@ public class ArrayTest {
     @Test
     public void testArrayOfBoolean() {
         int[] array = {2, 4, 6, 8, 9, 12};
-        assertEquals(Array.arrayOfBoolean(array), new boolean[]{true,true,true,true,false,true});
+        assertEquals(Array.arrayOfBoolean(array), new boolean[]{true, true, true, true, false, true});
     }
 
     @Test
     public void testLongToInt() {
         long k = 77875444343569890L;
-        int[] array = new int[]{18131789,-724369950};
-        assertEquals(Array.longToInt(k),array);
-        assertEquals(Array.intToLong(array),77875444343569890L);
+        int[] array = new int[]{18131789, -724369950};
+        assertEquals(Array.longToInt(k), array);
+        assertEquals(Array.intToLong(array), 77875444343569890L);
     }
 
     @Test
     public void testNaturalWithIndex() {
-        assertEquals(Array.naturalWithIndex(5,2),new int[]{4,5,1,2,3});
-        assertEquals(Array.naturalWithIndex(7,4),new int[]{4,5,6,7,1,2,3});
+        assertEquals(Array.naturalWithIndex(5, 2), new int[]{4, 5, 1, 2, 3});
+        assertEquals(Array.naturalWithIndex(7, 4), new int[]{4, 5, 6, 7, 1, 2, 3});
     }
 
     @Test
-    public void testTwoDimensionalArray(){
-        assertEquals(Array.twoDimensionalArray(3)[0][0],1);
-        assertEquals(Array.twoDimensionalArray(3)[0][2],3);
-        assertEquals(Array.twoDimensionalArray(3)[1][1],5);
+    public void testTwoDimensionalArray() {
+        assertEquals(Array.twoDimensionalArray(3)[0][0], 1);
+        assertEquals(Array.twoDimensionalArray(3)[0][2], 3);
+        assertEquals(Array.twoDimensionalArray(3)[1][1], 5);
+    }
+
+    @Test
+    public void testArrayIsNotNull() {
+        double[] array = { 9.4, 4.9, 2.1, 6.1, 8.8, 12.6};
+        double[] sortArray = {2.1, 4.9, 6.1, 8.8, 9.4, 12.6};
+        Array.arrayIsNotNull(array);
+        for(int i = 0; i < array.length; i++) {
+            assertEquals(array[i], sortArray[i]);
+        }
+        double[] array1 = { Double.NaN, 9.4, 4.9, 2.1, 6.1, 8.8, 12.6};
+        Array.arrayIsNotNull(array1);
+        assertEquals(array1[0], Double.NaN);
+        assertEquals(array1[1], 9.4, ACCURACY);
+    }
+
+    @Test
+    public void testIntToHexString() {
+        int[] array = {12, 14, 16, 18, 19, 22};
+        Collection<String> hexStringArray = Array.intToHexString(array);
+        for (String hexString : hexStringArray) {
+            System.out.println(hexString);
+        }
     }
 }

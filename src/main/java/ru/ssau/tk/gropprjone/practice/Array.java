@@ -1,6 +1,10 @@
 package ru.ssau.tk.gropprjone.practice;
 
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.LinkedList;
+
 class Array {
 
     static int[] workThisArray(int count) {
@@ -280,13 +284,31 @@ class Array {
         int n = 1;
         for (int i = 0; i < count; i++) {
             arrays[i] = new int[count - i];
-            for (int j = 0; j < (count - i); j++){
+            for (int j = 0; j < (count - i); j++) {
                 arrays[i][j] = n;
                 n++;
             }
         }
         return arrays;
     }
+
+    static void arrayIsNotNull(double[] array) {
+        for (double i : array) {
+            if (!Double.isNaN(i)) {
+                Arrays.sort(array);
+            } else {
+                return;
+            }
+        }
+    }
+
+    static Collection<String> intToHexString(int[] array) {
+        Collection<String> hexStringArray = new LinkedList<>();
+        Arrays.stream(array).forEach(value -> hexStringArray.add(Integer.toHexString(value)));
+        return hexStringArray;
+    }
+
+
 }
 
 
