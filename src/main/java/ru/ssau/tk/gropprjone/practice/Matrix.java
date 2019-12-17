@@ -1,5 +1,7 @@
 package ru.ssau.tk.gropprjone.practice;
 
+import java.util.Arrays;
+
 public class Matrix {
     private double[][] matrix;
     private final int n;
@@ -26,7 +28,7 @@ public class Matrix {
         return n;
     }
 
-    int getColumns() {
+    int getM() {
         return m;
     }
 
@@ -38,4 +40,18 @@ public class Matrix {
         return matrix[n - 1][m - 1];
     }
 
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder1 = new StringBuilder();
+        for (double[] rows : matrix) {
+            for (double a : rows) {
+                stringBuilder.append(a + ",");
+            }
+            stringBuilder.replace(stringBuilder.length() - 1, stringBuilder.length(), "");
+            stringBuilder1.append(stringBuilder.toString() + ";\n");
+            stringBuilder = new StringBuilder("");
+        }
+        return stringBuilder1.toString();
+    }
 }
