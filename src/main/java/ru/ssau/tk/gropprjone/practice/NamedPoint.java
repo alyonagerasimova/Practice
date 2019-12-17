@@ -1,15 +1,18 @@
 package ru.ssau.tk.gropprjone.practice;
 
 public class NamedPoint extends Point implements Resettable {
+
     private String name;
-    public NamedPoint(){
-        this(0,0,0,"Origin");
+
+    public NamedPoint() {
+        this(0, 0, 0, "Origin");
     }
+
     public NamedPoint(double x, double y, double z) {
         super(x, y, z);
     }
 
-     NamedPoint(double x, double y, double z, String name) {
+    NamedPoint(double x, double y, double z, String name) {
         super(x, y, z);
         this.name = name;
     }
@@ -25,5 +28,15 @@ public class NamedPoint extends Point implements Resettable {
     @Override
     public void reset() {
         name = "Absent";
+    }
+
+    @Override
+    public String toString() {
+        if (name == null) {
+            return super.toString();
+        } else {
+            return name + " " + super.toString();
+        }
+
     }
 }
