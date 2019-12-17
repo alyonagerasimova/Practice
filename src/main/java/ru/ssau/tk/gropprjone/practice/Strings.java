@@ -116,5 +116,8 @@ public class Strings {
         return string.substring(from, to);
     }
 
+    static void descriptionOfObject(Object object){
+        System.out.println("Описание обьекта: " + object);
+    }
 
 }
