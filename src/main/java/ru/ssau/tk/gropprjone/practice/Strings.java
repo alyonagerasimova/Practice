@@ -116,8 +116,21 @@ public class Strings {
         return string.substring(from, to);
     }
 
-    static void descriptionOfObject(Object object){
+    static void descriptionOfObject(Object object) {
         System.out.println("Описание обьекта: " + object);
     }
 
+    static String[] stringToArray(String string) {
+        String[] array = string.split(" ");
+        for (int i = 0; i < array.length; i++) {
+            if (!array[i].isEmpty()) {
+                array[i] = array[i].substring(0, 1).toUpperCase() + array[i].substring(1);
+            }
+        }
+        return array;
+    }
+
+    static String arrayToString(String[] arrayString){
+        return String.join(", ", arrayString);
+    }
 }

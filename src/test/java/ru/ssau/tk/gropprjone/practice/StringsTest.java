@@ -96,14 +96,30 @@ public class StringsTest {
     @Test
     public void testDescriptionOfObject() {
         Object object1 = new Person("Andrew", "Garfield", 2323214);
-        Object object2 = new Point(1,2,3);
-        Object object3 = new NamedPoint(4,5,6,"A");
-        double[][] matrix = {{1,2,3},{4,5,6}};
+        Object object2 = new Point(1, 2, 3);
+        Object object3 = new NamedPoint(4, 5, 6, "A");
+        double[][] matrix = {{1, 2, 3}, {4, 5, 6}};
         Object object4 = new Matrix(matrix);
         Strings.descriptionOfObject(object1);
         Strings.descriptionOfObject(object2);
         Strings.descriptionOfObject(object3);
         Strings.descriptionOfObject(object4);
 
+    }
+
+    @Test
+    public void testStringToArray() {
+        String string = "have a nice day";
+        String[] array = Strings.stringToArray(string);
+        assertEquals(array[0], "Have");
+        assertEquals(array[1], "A");
+        assertEquals(array[2], "Nice");
+        assertEquals(array[3], "Day");
+    }
+
+    @Test
+    public void testArrayToString() {
+        String[] arString = {"лимон", "грейпфрут", "апельсины","мандарины",  "улыбнитесь)"};
+        assertEquals(Strings.arrayToString(arString),"лимон, грейпфрут, апельсины, мандарины, улыбнитесь)");
     }
 }
