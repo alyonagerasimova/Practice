@@ -130,7 +130,19 @@ public class Strings {
         return array;
     }
 
-    static String arrayToString(String[] arrayString){
+    static String arrayToString(String[] arrayString) {
         return String.join(", ", arrayString);
     }
+
+    static String replaceAndRevertString(String string) {
+        StringBuilder stringBuilder = new StringBuilder(string);
+        for (int i = 0; i < string.length(); i++) {
+            if (i % 2 == 0) {
+                stringBuilder.replace(i, i + 1, Integer.toString(i));
+            }
+        }
+        stringBuilder.reverse();
+        return stringBuilder.toString();
+    }
+
 }

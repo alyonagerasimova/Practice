@@ -119,7 +119,13 @@ public class StringsTest {
 
     @Test
     public void testArrayToString() {
-        String[] arString = {"лимон", "грейпфрут", "апельсины","мандарины",  "улыбнитесь)"};
-        assertEquals(Strings.arrayToString(arString),"лимон, грейпфрут, апельсины, мандарины, улыбнитесь)");
+        String[] arString = {"лимон", "грейпфрут", "апельсины", "мандарины", "улыбнитесь)"};
+        assertEquals(Strings.arrayToString(arString), "лимон, грейпфрут, апельсины, мандарины, улыбнитесь)");
+    }
+
+    @Test
+    public void testReplaceAndRevertString() {
+        String string = "грейпфрут";      //0р2й4ф6у8
+        assertEquals(Strings.replaceAndRevertString(string), "8у6ф4й2р0");
     }
 }
