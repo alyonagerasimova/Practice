@@ -2,6 +2,9 @@ package ru.ssau.tk.gropprjone.practice;
 
 import org.testng.annotations.Test;
 
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+
 import static org.testng.Assert.*;
 
 public class StringsTest {
@@ -133,5 +136,19 @@ public class StringsTest {
     public void testFromIntToString() {
         assertEquals(Strings.fromIntToString(5), "0 1 2 3 4");
         System.out.println(Strings.fromIntToString(10000));
+    }
+
+    @Test
+    public void encoding() {
+        System.out.println(Charset.defaultCharset());       //  utf-8
+    }
+
+    @Test
+    public void testCodeConversion() {
+        String string = "have a nice day";
+        System.out.println(Strings.codeConversion(string, StandardCharsets.UTF_8, StandardCharsets.ISO_8859_1));
+        System.out.println(Strings.codeConversion(string, StandardCharsets.UTF_8, StandardCharsets.UTF_16BE)); //桡癥⁡⁮楣攠摡�
+        System.out.println(Strings.codeConversion(string, StandardCharsets.UTF_8, StandardCharsets.UTF_16LE)); //慨敶愠渠捩⁥慤�
+        System.out.println(Strings.codeConversion(string, StandardCharsets.UTF_16, StandardCharsets.UTF_8)); //�� h a v e   a   n i c e   d a y
     }
 }

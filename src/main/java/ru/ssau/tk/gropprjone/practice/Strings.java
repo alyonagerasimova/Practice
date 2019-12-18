@@ -1,5 +1,10 @@
 package ru.ssau.tk.gropprjone.practice;
 
+import sun.nio.cs.UTF_32;
+
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+
 public class Strings {
 
     static char[] stringToChars(String str) {
@@ -153,4 +158,9 @@ public class Strings {
         }
         return stringBuilder.toString();
     }
+
+    static String codeConversion(String string, Charset code1, Charset code2) {
+        return new String(string.getBytes(code1), code2);
+    }
+
 }
