@@ -128,4 +128,10 @@ public class StringsTest {
         String string = "грейпфрут";      //0р2й4ф6у8
         assertEquals(Strings.replaceAndRevertString(string), "8у6ф4й2р0");
     }
+
+    @Test
+    public void testFromIntToString() {
+        assertEquals(Strings.fromIntToString(5), "0 1 2 3 4");
+        System.out.println(Strings.fromIntToString(10000));
+    }
 }

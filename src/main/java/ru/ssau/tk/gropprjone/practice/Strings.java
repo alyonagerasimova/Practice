@@ -145,4 +145,12 @@ public class Strings {
         return stringBuilder.toString();
     }
 
+    static String fromIntToString(int number) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(0);
+        for (int i = 1; i < number; i++) {
+            stringBuilder.append(" ").append(i);
+        }
+        return stringBuilder.toString();
+    }
 }
