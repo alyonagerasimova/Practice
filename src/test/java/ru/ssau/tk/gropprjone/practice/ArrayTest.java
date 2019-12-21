@@ -265,4 +265,14 @@ public class ArrayTest {
 
         assertEquals(Array.getOftenElement(array), rightResult);
     }
+
+    @Test
+    public void revertMinMaxTest() {
+        Integer[] array = {12, 11, 16, 12, 16, 11};
+        Integer[] arrayResult = {12, 16, 11, 12, 16, 11};
+
+        Array.revertMinMax(array);
+
+        assertEquals(array, arrayResult);
+    }
 }

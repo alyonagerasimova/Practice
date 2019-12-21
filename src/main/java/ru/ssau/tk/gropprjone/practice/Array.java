@@ -1,6 +1,5 @@
 package ru.ssau.tk.gropprjone.practice;
 
-
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
@@ -331,6 +330,25 @@ class Array {
         }
 
         return resultKey;
+    }
+
+    //task 2.23
+    static <T extends Number> void revertMinMax(T[] array) {
+        int minPos = 0;
+        int maxPos = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            double current = array[i].doubleValue();
+            if (current > array[maxPos].doubleValue()) {
+                maxPos = i;
+            } else if (current < array[minPos].doubleValue()) {
+                minPos = i;
+            }
+        }
+
+        T tmp = array[minPos];
+        array[minPos] = array[maxPos];
+        array[maxPos] = tmp;
     }
 }
 
