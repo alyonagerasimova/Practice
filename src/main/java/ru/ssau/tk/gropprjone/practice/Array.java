@@ -3,6 +3,7 @@ package ru.ssau.tk.gropprjone.practice;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 class Array {
@@ -308,7 +309,29 @@ class Array {
         return hexStringArray;
     }
 
+    //task 2.21
+    static int getOftenElement(int[] array) {
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        for (int key : array) {
+            if (!hashMap.containsKey(key)) {
+                hashMap.put(key, 1);
+            } else {
+                int tmp = hashMap.get(key);
+                hashMap.replace(key, ++tmp);
+            }
+        }
 
+        int result = 1;
+        int resultKey = array[0];
+        for (int key : array) {
+            if (hashMap.get(key) > result) {
+                result = hashMap.get(key);
+                resultKey = key;
+            }
+        }
+
+        return resultKey;
+    }
 }
 
 

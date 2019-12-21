@@ -3,7 +3,7 @@ package ru.ssau.tk.gropprjone.practice;
 
 public class Program {
     public static void main(String[] args) {
-       Person person = new Person();// Ссылка, указвает на обьект в куче
+        Person person = new Person();// Ссылка, указвает на обьект в куче
         person.setFirstName("Arkadiy");
         int number = 5; // Хранится в стеке, передается по значению
         checkInt(number);

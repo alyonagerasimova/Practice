@@ -1,10 +1,8 @@
 package ru.ssau.tk.gropprjone.practice;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Collection;
-import java.util.LinkedList;
 
 import static org.testng.Assert.*;
 
@@ -258,5 +256,13 @@ public class ArrayTest {
         for (String hexString : hexStringArray) {
             System.out.println(hexString);
         }
+    }
+
+    @Test
+    public void testGetOftenElement() {
+        int[] array = {12, 11, 16, 12, 14, 11};
+        int rightResult = 12;
+
+        assertEquals(Array.getOftenElement(array), rightResult);
     }
 }
