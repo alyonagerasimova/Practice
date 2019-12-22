@@ -1,9 +1,6 @@
 package ru.ssau.tk.gropprjone.practice;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.*;
 
 class Array {
 
@@ -349,6 +346,19 @@ class Array {
         T tmp = array[minPos];
         array[minPos] = array[maxPos];
         array[maxPos] = tmp;
+    }
+
+    //2.11
+    static List<Integer> getDividers(int num) {
+        List<Integer> result = new ArrayList<>();
+        for (int i = 2; i < Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                result.add(i);
+                result.add(num / i);
+            }
+        }
+        result.sort(Comparator.comparingInt(a -> a));
+        return result;
     }
 }
 

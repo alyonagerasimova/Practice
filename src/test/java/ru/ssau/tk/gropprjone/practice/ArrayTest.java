@@ -2,7 +2,10 @@ package ru.ssau.tk.gropprjone.practice;
 
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
 
 import static org.testng.Assert.*;
 
@@ -274,5 +277,18 @@ public class ArrayTest {
         Array.revertMinMax(array);
 
         assertEquals(array, arrayResult);
+    }
+
+    @Test
+    public void getDividersTest() {
+        int num = 12;
+        List<Integer> result = new ArrayList<>();
+        result.add(2);
+        result.add(6);
+        result.add(3);
+        result.add(4);
+        result.sort(Comparator.comparingInt(a -> a));
+
+        assertEquals(Array.getDividers(num), result);
     }
 }
