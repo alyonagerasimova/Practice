@@ -1,7 +1,5 @@
 package ru.ssau.tk.gropprjone.practice;
 
-import java.util.Arrays;
-
 public class Matrix {
     private double[][] matrix;
     private final int n;
@@ -30,6 +28,10 @@ public class Matrix {
 
     int getM() {
         return m;
+    }
+
+    double[] getColumn(int i) {
+        return this.matrix[i - 1];
     }
 
     public void setAt(int n, int m, double value) {
